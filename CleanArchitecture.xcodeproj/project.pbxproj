@@ -29,8 +29,8 @@
 		D62C4D59282BE2D200D66ADA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D62C4D58282BE2D200D66ADA /* SDWebImageSwiftUI */; };
 		D62C4D5D282BE5C400D66ADA /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = D62C4D5C282BE5C400D66ADA /* Domain */; };
 		D62C4D5F282BE5C400D66ADA /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = D62C4D5E282BE5C400D66ADA /* Networking */; };
-		D6AB373E282CFD9C00EC9188 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = D6AB373D282CFD9C00EC9188 /* Domain */; };
-		D6E18C33282D428D003D30B1 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = D6E18C32282D428D003D30B1 /* Networking */; };
+		D69DB20E282D494800A9F249 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = D69DB20D282D494800A9F249 /* Domain */; };
+		D6BDA2CB282D4CB500E543AE /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = D6BDA2CA282D4CB500E543AE /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,10 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6E18C33282D428D003D30B1 /* Networking in Frameworks */,
 				D62C4D5F282BE5C400D66ADA /* Networking in Frameworks */,
 				D62C4D5D282BE5C400D66ADA /* Domain in Frameworks */,
-				D6AB373E282CFD9C00EC9188 /* Domain in Frameworks */,
+				D69DB20E282D494800A9F249 /* Domain in Frameworks */,
+				D6BDA2CB282D4CB500E543AE /* Networking in Frameworks */,
 				D62C4D59282BE2D200D66ADA /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,8 +249,8 @@
 				D62C4D58282BE2D200D66ADA /* SDWebImageSwiftUI */,
 				D62C4D5C282BE5C400D66ADA /* Domain */,
 				D62C4D5E282BE5C400D66ADA /* Networking */,
-				D6AB373D282CFD9C00EC9188 /* Domain */,
-				D6E18C32282D428D003D30B1 /* Networking */,
+				D69DB20D282D494800A9F249 /* Domain */,
+				D6BDA2CA282D4CB500E543AE /* Networking */,
 			);
 			productName = CleanArchitecture;
 			productReference = D62C4D07282BE0E200D66ADA /* CleanArchitecture.app */;
@@ -326,8 +326,8 @@
 			mainGroup = D62C4CFE282BE0E200D66ADA;
 			packageReferences = (
 				D62C4D57282BE2D200D66ADA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				D6AB373C282CFD9C00EC9188 /* XCRemoteSwiftPackageReference "Domain" */,
-				D6E18C31282D428D003D30B1 /* XCRemoteSwiftPackageReference "Networking" */,
+				D69DB20C282D494800A9F249 /* XCRemoteSwiftPackageReference "Domain" */,
+				D6BDA2C9282D4CB500E543AE /* XCRemoteSwiftPackageReference "Networking" */,
 			);
 			productRefGroup = D62C4D08282BE0E200D66ADA /* Products */;
 			projectDirPath = "";
@@ -721,7 +721,7 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		D6AB373C282CFD9C00EC9188 /* XCRemoteSwiftPackageReference "Domain" */ = {
+		D69DB20C282D494800A9F249 /* XCRemoteSwiftPackageReference "Domain" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Killjoy86/Domain";
 			requirement = {
@@ -729,7 +729,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		D6E18C31282D428D003D30B1 /* XCRemoteSwiftPackageReference "Networking" */ = {
+		D6BDA2C9282D4CB500E543AE /* XCRemoteSwiftPackageReference "Networking" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Killjoy86/Networking";
 			requirement = {
@@ -753,14 +753,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
 		};
-		D6AB373D282CFD9C00EC9188 /* Domain */ = {
+		D69DB20D282D494800A9F249 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D6AB373C282CFD9C00EC9188 /* XCRemoteSwiftPackageReference "Domain" */;
+			package = D69DB20C282D494800A9F249 /* XCRemoteSwiftPackageReference "Domain" */;
 			productName = Domain;
 		};
-		D6E18C32282D428D003D30B1 /* Networking */ = {
+		D6BDA2CA282D4CB500E543AE /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D6E18C31282D428D003D30B1 /* XCRemoteSwiftPackageReference "Networking" */;
+			package = D6BDA2C9282D4CB500E543AE /* XCRemoteSwiftPackageReference "Networking" */;
 			productName = Networking;
 		};
 /* End XCSwiftPackageProductDependency section */
