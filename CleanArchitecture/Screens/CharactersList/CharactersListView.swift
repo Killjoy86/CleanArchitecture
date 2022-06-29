@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import Domain
+import Networking
 
 struct CharactersListView: View {
     
@@ -20,29 +21,27 @@ struct CharactersListView: View {
         }
         .onAppear(perform: viewModel.onAppear)
     }
-        
+    
     private var content: some View {
         switch viewModel.state {
         case .idle:
-            return Text("idle")
-                .mapToAnyView()
+            return EmptyView().mapToAnyView()
         case .loading:
-            return activityIndicator
-                .mapToAnyView()
+            return activityIndicator.mapToAnyView()
         case .error(let error):
-            return Text(error.message)
-                .mapToAnyView()
-        case .loaded(let characters):
-            return list(of: characters)
-                .mapToAnyView()
+            return Text(error.message).mapToAnyView()
+        case .loaded(let viewModels):
+            return list(of: viewModels).mapToAnyView()
         }
     }
     
-    private func list(of items: [Character]) -> some View {
-        List(items) { item in
+    private func list(of itemViewModels: [CharacterListItemViewModel]) -> some View {
+        List(itemViewModels) { itemViewModel in
             NavigationLink(
-                destination: viewModel.detailsView(for: item),
-                label: { CharacterListItemView(item: item) }
+                destination: viewModel.detailsView(for: itemViewModel),
+                label: {
+                    CharacterListItemView(viewModel: itemViewModel)
+                }
             )
         }
     }
@@ -55,7 +54,18 @@ struct CharactersListView: View {
 
 //struct CharactersListView_Previews: PreviewProvider {
 //
+//    static var stubView: some View {
+//        let networking: AppNetworking = .stubbedNetworking()
+//        let services = Networking.UseCaseProvider(provider: networking)
+//        let builder = CharactersViewBuilder(services: services)
+//        let viewModel = CharactersListViewModel(
+//            characterUseCase: services.makeCharacterUseCase(),
+//            builder: builder
+//        )
+//        return CharactersListView(viewModel: viewModel)
+//    }
+//
 //    static var previews: some View {
-//        CharactersListView()
+//        stubView
 //    }
 //}

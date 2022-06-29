@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 
 struct CharacterListItemView: View {
     
-    var item: Character
+    var viewModel: CharacterListItemViewModel
     
     var body: some View {
         HStack {
@@ -21,13 +21,13 @@ struct CharacterListItemView: View {
     }
     
     private var title: some View {
-        Text(item.name)
+        Text(viewModel.item.name)
             .font(.title)
             .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .center)
     }
     
     private var icon: some View {
-        return item
+        return viewModel.item
             .image
             .map {
                 WebImage(url: $0, options: .continueInBackground)

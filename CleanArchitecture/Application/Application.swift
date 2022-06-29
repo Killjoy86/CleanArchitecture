@@ -35,7 +35,19 @@ struct Application {
     }
     
     var initialView: some View {
-        let builder = CharactersViewBuilder(services: services)
-        return builder.listView
+        let firstBuilder = CharactersViewBuilder(services: services)
+        
+        let secondBuilder = CharactersViewBuilder(services: services)
+        
+        return TabView {
+            firstBuilder.listView
+                .tabItem {
+                    Label("First", systemImage: "star")
+                }
+            secondBuilder.listView
+                .tabItem {
+                    Label("Second", systemImage: "circle")
+                }
+        }
     }
 }
